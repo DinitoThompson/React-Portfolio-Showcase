@@ -1,14 +1,11 @@
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-// COMPONENTS
 import CodeSample from "../components/CodeSample";
-
 // REACT ICONS - https://react-icons.github.io/react-icons
 import { IoCaretBackCircleSharp } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import {
-  AiFillDashboard,
+  AiFillProfile,
   AiOutlineCloudUpload,
   AiFillCode,
   AiOutlineAntDesign,
@@ -18,6 +15,26 @@ import {
   AiFillSetting,
   AiOutlineLogout,
 } from "react-icons/ai";
+import Profile from "../components/Profile";
+
+const MenuItems = [
+  { title: "Profile", src: <AiFillProfile className="w-5 h-5" /> },
+  { title: "Upload", src: <AiOutlineCloudUpload className="w-5 h-5" /> },
+  {
+    title: "Used Liberaries",
+    src: <AiFillCode className="w-5 h-5" />,
+    gap: true,
+  },
+  { title: "ToDo List", src: <AiOutlineAntDesign className="w-5 h-5" /> },
+  { title: "Movie App", src: <AiFillVideoCamera className="w-5 h-5" /> },
+  { title: "Gallery", src: <AiFillProject className="w-5 h-5" /> },
+  {
+    title: "Illustrator Projects",
+    src: <AiFillMinusCircle className="w-5 h-5" />,
+    gap: true,
+  },
+  { title: "Photoshop Projects", src: <AiFillSetting className="w-5 h-5" /> },
+];
 
 const Dashboard = () => {
   const [sideMenu, setSideMenu] = useState(true);
@@ -25,25 +42,6 @@ const Dashboard = () => {
   const [active, setActive] = useState(0);
 
   const navigate = useNavigate();
-
-  const MenuItems = [
-    { title: "Dashboard", src: <AiFillDashboard className="w-5 h-5" /> },
-    { title: "Upload", src: <AiOutlineCloudUpload className="w-5 h-5" /> },
-    {
-      title: "Used Liberaries",
-      src: <AiFillCode className="w-5 h-5" />,
-      gap: true,
-    },
-    { title: "ToDo List", src: <AiOutlineAntDesign className="w-5 h-5" /> },
-    { title: "Weather API", src: <AiFillVideoCamera className="w-5 h-5" /> },
-    { title: "Graphic Designs", src: <AiFillProject className="w-5 h-5" /> },
-    {
-      title: "Illustrator Projects",
-      src: <AiFillMinusCircle className="w-5 h-5" />,
-      gap: true,
-    },
-    { title: "Photoshop Projects", src: <AiFillSetting className="w-5 h-5" /> },
-  ];
 
   function handleLogout() {
     alert("Logout Successful, Going back to Login Screen");
@@ -55,7 +53,7 @@ const Dashboard = () => {
       {/* Sidemenu */}
       <div
         className={` ${
-          sideMenu ? "w-72" : "w-20 "
+          sideMenu ? "w-[250px]" : "w-20 "
         } bg-green-700 h-screen p-5  pt-8 relative duration-300`}
       >
         {/* Minimze Icon */}
@@ -135,7 +133,7 @@ const Dashboard = () => {
       {/* Content Area */}
       <div className="h-screen flex-1 p-7">
         {currentMenu === 0 ? (
-          <h1 className="text-2xl font-semibold"> Dashboard </h1>
+          <Profile />
         ) : currentMenu === 1 ? (
           <h1 className="text-2xl font-semibold"> Upload </h1>
         ) : currentMenu === 2 ? (
