@@ -1,6 +1,8 @@
-# A Simple React Portfolio Sample, With A Dashboard To Render Different Components 
+# Portfolio Sample
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A sample portfolio project that developers can use to showcase their skills. 
+
+Still Being Developed...
 
 ## Available Scripts
 
