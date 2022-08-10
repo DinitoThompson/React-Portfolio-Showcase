@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# A Simple React Portfolio Sample, With A Dashboard To Render Different Components 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
